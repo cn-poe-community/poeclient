@@ -1,4 +1,4 @@
-package poe_test
+package poeclient_test
 
 import (
 	"os"

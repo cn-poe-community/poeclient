@@ -1,4 +1,4 @@
-package poe
+package poeclient
 
 import (
 	"errors"
