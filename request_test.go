@@ -10,6 +10,21 @@ import (
 
 var poeSessId = os.Getenv("poesessid")
 
+func TestGetProfile(t *testing.T) {
+	poeClient, err := poe.NewPoeClient(poe.TxPoeHost, poeSessId)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	p, err := poeClient.GetProfile()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(p.Uuid) == 0 {
+		t.Fatalf("returned no profile: %v", p)
+	}
+}
+
 func TestGetCharacters(t *testing.T) {
 	poeClient, err := poe.NewPoeClient(poe.TxPoeHost, poeSessId)
 	if err != nil {
